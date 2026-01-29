@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample Node.js App</title>
+</head>
+<body>
+  <h1>Hello Node.js 👋</h1>
+  <button onclick="callApi()">Call API</button>
+  <p id="result"></p>
+
+  <script>
+    function callApi() {
+      fetch('/api/hello')
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById('result').innerText = data.message;
+        });
+    }
+  </script>
+</body>
+</html>
